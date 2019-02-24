@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+    <title>Phố Việt Company</title>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/toeic.png}"/>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}"/> 
+    
+    <script type="text/javascript" th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+       
+    <!-- JS Global Compulsory -->           
+	<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+       
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	
+  <script type="text/javascript" th:src="@{/js/dropdown.js}"></script>	
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  
+  
+</head> 
+
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div class="container">
+		<div class="admin-content">
+			<div class="row">
+				<div class="col-md-3">				  
+			    	<div th:replace="fragments/user_sidebar :: user-sidebar"></div>
+			 	</div>
+			 	<div class="col-md-9">
+					<div id="exercise-manager" class="tab-pane">
+				     	<div class="exercise">
+				            <h3 style="text-align: center; color: red; text-transform: uppercase; margin-bottom: 25px;">Quản lý Bài tập</h3>
+				  			    <div style="max-height: 500px;overflow-y:auto;">
+				  	          <table id="pro_manager" class="table table-striped" style="text-align: center; padding: 5px;">
+				  	              <thead class="">
+				  	                <tr>				  	                 
+				  	                  <th  class="acc-table" style="cursor: pointer; min-width: 100px; width: 100px;">Tên sản phẩm</th>
+				  	                  <th  class="acc-table" style="cursor: pointer; min-width: 80px;">Địa chỉ</th>
+				  	                  <th class="acc-table" style="min-width: 90px;">Loại hình XD</th>
+				  	                  <th class="acc-table" style="min-width: 80px;">Trạng thái</th>
+				  	                  <th class="acc-table" style="min-width: 90px;">Ngày đăng</th>			  	                  
+				  	                  <th class="acc-table" style="min-width: 80px;">Action</th>				  	                 
+				  	                </tr>
+				  	              </thead>
+				  	              <tbody >
+				  	                <tr th:each="p : ${products}">			  	                 
+				  	                  <td th:text="${p.name}">Kỹ năng nghe tranh vật trong bài thi TOEIC (Part 2 - Unit 1)</td>
+				  	                  <td th:text="${p.address}">1</td>
+				  	                  <td th:text="${p.type}">thiết kế</td>
+				  	                  <td th:text="${p.status}">hoàn thành</td>
+				  	                  <td th:text="${p.createpostday}">21-1-2017</td>			  	                  
+				  	                  <td><a th:href="@{/update-post(id=${p.id})}"><i style="color: green; font-size:22px;" class="fa fa-edit"></i></a>
+				  	                  <a style="margin-left: 5px;" th:href="@{/delete-product(id=${p.id})}"><i style="color: red; font-size:22px;" class="fa fa-trash-o"></i></a></td>
+				  	                </tr>
+				  	              </tbody>
+				  	            </table>
+				              </div>
+				            </div>  
+				       </div> 
+				   </div>	 
+			 </div>
+		</div>
+				
+	</div>	
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#pro_manager').DataTable();
+		} );
+	</script>
+
+</body>
+</html>

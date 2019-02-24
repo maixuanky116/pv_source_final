@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+    <title>Phố Việt Company</title>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/toeic.png}"/>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}"/> 
+    
+    <script type="text/javascript" th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    
+    <link rel="stylesheet" th:href="@{/js/dropdown.js}"/>
+    
+    <!-- JS Global Compulsory -->           
+	<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+    
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
+
+<body>
+   
+<div class="wrapper">
+	<div th:replace="fragments/layout :: header"></div>
+	
+	<!--=== Content ===--> 
+	 <div class="design-page">
+	 	<div class="design-header-img" style="background: url(../img/nen-3.PNG); height: 240px;">	  			  		
+	  		<!-- <img width="100%" height="400" alt="" src="/img/anh-nen-4.jpg"/> -->	  		  		
+	  		<div class="detail-header">
+	  			<div class="media-body text-left">
+		  			<div class="tintuc">	  					  			
+			  			<p style="padding-top: 130px"> Giải pháp sử dụng bê tông trần, gạch nung cho sàn, trần, tường giúp</p>
+			  			<p style="font-size: 24px;">TIN TỨC</p>		
+			  			
+		  			</div> 
+	  			</div>
+	  		</div>
+	    </div>
+	    
+	    <div class="container">
+		    <div class="detail-news">
+			 	<!-- <img width="100%" height="240" alt="" src="/img/nen-2.PNG"/> -->
+			 	<div class="row">
+			 		<div class="col-md-8" style="padding: 0px;" >
+			 			<div class="title-details">
+			 				<h4 th:text="${product.name}">Những góc vườn xanh trong căn hộ</h4>
+			 				<div class="row">
+				 				<p th:text="${product.createpostday}"><i class="fa fa-clock-o" aria-hidden="true"></i> 25-6-2017</p>
+				 				<p th:text="${product.type}"><i class="fa fa-folder-open-o" aria-hidden="true"></i> Thiêt kế</p>
+				 				<p th:text="${product.author}"><i class="fa fa-user" aria-hidden="true"></i> admin</p>
+				 			</div>
+			 			</div>
+			 			<div class="content-details">
+			 			
+			 				<p th:utext="${product.content}"></p>
+			 				
+			 				<!-- <p>Giới thiệu với bạn đọc mẫu biệt thự truyền thống có tên gọi “The Memory” là một dự án kiến trúc được thiết kế cho một gia đình 3 thế hệ tại Tân An, Thủ Dầu Một, Bình Dương. 
+			 					Một trong những đặc điểm văn hóa truyền thống tại các nước châu Á, trong đó có Việt Nam là có ông bà, cha mẹ và con cái đều sống cùng nhau trong một nhà.</p>
+			 				<img width="100%" alt="" src="https://the7.io/construction/wp-content/uploads/sites/26/2016/06/house3-1000x500.jpg"/>
+			 				<strong>“Khi về nhà, có lẽ người ta chẳng cần gì ngoài một không gian yên tĩnh và một góc vườn”</strong>
+			 				<p>Công trình tọa lạc trong một con hẻm nhỏ yên tĩnh thuộc quận Tân Phú, TP.HCM. Chủ nhà sở hữu một vài bất động sản ở trung tâm thành phố nhưng vẫn chọn sống nơi này vì môi trường xung quanh thân thiện và yên ả, hợp với người lớn tuổi.</p>
+			 				<img width="100%" alt="" src="http://53642.chilibusiness.net/wp-content/uploads/2016/01/215_6211_resize-1024x73611.jpg"/>
+			 				<p>Khi cải tạo, kiến trúc sư giữ lại phần lớn kết cấu cũng như bố cục của khu trọ, chỉ giải phóng mặt tiền và mở thêm khoảng vườn giữa nhà để các mảng xanh bao phủ từ bếp, phòng khách cho đến các phòng ngủ</p>
+			 				<p>Gia chủ sống với mẹ già nên toàn bộ không gian sinh hoạt đều nằm ở tầng trệt. Chỉ phòng làm việc của ông cùng phòng ngủ dự phòng được dời lên tầng lầu. Từ bàn làm việc, ông vẫn có thể nhìn bao quát về phía phòng khách và bếp bên dưới cũng như một góc vườn.</p>
+			 				<p>Khu vực sinh hoạt chung sử dụng một bức tường gạch kính lấy sáng đồng thời tạo một bức rèm ước lệ, giúp ngôi nhà không quá cách biệt với cư dân xóm trọ bên kia dãy tường. Hằng ngày, gia chủ vẫn có thể thấy thấp thoáng bóng dáng họ đi về và ngược lại.</p>
+			 			
+ -->			 				
+			 			</div>
+			 		</div>
+			 		<div class="col-md-4">
+			 		 	<div th:replace="fragments/layout :: panel-right"></div>
+			 		</div>
+			 	</div>
+		 	</div>
+		</div>
+	 </div>
+	 
+	 
+	 <!--=== End Content ===--> 
+	 
+	 <div th:replace="fragments/layout :: footer"></div>
+</div>
+
+<div th:replace="fragments/layout :: modal-login"></div>
+
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+
+</body>
+</html> 

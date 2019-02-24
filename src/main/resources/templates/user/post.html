@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Phố Việt Company</title>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" th:href="@{/toeic.png}" />
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+	
+	<link rel="stylesheet"
+		th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}" />
+	
+	<script type="text/javascript"
+		th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+	
+	<link rel="stylesheet" th:href="@{/js/dropdown.js}" />
+	
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script
+		src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+	
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet"
+		href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+</head>
+
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div class="container">
+		<div class="admin-content">
+			<div class="row">
+				<div class="col-md-3">
+					<div th:replace="fragments/user_sidebar :: user-sidebar"></div>
+				</div>
+				<div class="col-md-9">
+					<div class="profile-content"
+						style="margin-left: auto; margin-right: auto;">
+
+						<form th:object="${product}" method="post"
+							th:action="@{/save-post}" enctype="multipart/form-data">
+							<div class="shadow">
+								<div class="group_fields">
+									<h3 class="form_title"
+										style="background-color: #1931a7; padding: 1%; color: #fff;">Thông
+										tin chung</h3>
+								</div>
+								<div class="fields">
+									<p class="bg-success">Điền đầy đủ các thông tin bên dưới.</p>
+									<div class="group_fields">
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-12">
+													<label for="tieude" class="col-sm-12 control-label">Tiêu
+														đề tin <span class="red_require">(*) </span>
+													</label> <input th:field="*{name}" type="text" class="form-control"
+														name="tieude" id="tieude" placeholder="Tiêu đề"
+														maxlength="100" required="required" />
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 col-xs-12">
+													<label for="loaichuyenmuc" class="col-sm-12 control-label">Địa
+														chỉ: <span class="red_require">(*)</span>
+													</label> <input th:field="*{address}" type="text"
+														class="form-control" name="sodienthoai" id="sodienthoai"
+														placeholder="" required="required" />
+
+													<select id="loaichuyenmuc" name="loaichuyenmuc" class="form-control" required="required">
+					                                <option value="Phòng trọ, nhà trọ">Phòng trọ, nhà trọ</option>
+					                                <option value="Cho thuê nhà nguyên căn">Cho thuê nhà nguyên căn</option>
+					                                <option value="Tìm người ở ghép">Tìm người ở ghép</option>
+					                            </select>
+												</div>
+												<div class="col-sm-6 col-xs-12">
+													<label for="sodienthoai" class="col-sm-12 control-label">Loại
+														công trình: <span class="red_require">(*)</span>
+													</label> <select th:field="*{type}" id="loaichuyenmuc"
+														name="loaichuyenmuc" class="form-control"
+														required="required">
+														<option value="Thiết kế nhà ở">Thiết kế nhà ở</option>
+														<option value="Thiết kế văn phòng">Thiết kế văn
+															phòng</option>
+														<option value="Thiết kế nội thất">Thiết kế nội
+															thất</option>
+														<option value="Dự án nhà ở">Dự án nhà ở</option>
+														<option value="Dự án văn phòng">Dự án văn phòng</option>
+														<option value="Dự án nhà xưởng">Dự án nhà xưởng</option>
+														<option value="Nội thất văn phòng">Nội thất văn
+															phòng</option>
+														<option value="Nội thất nhà ở">Nội thất nhà ở</option>
+														<option value="Nội thất xưởng">Nội thất xưởng</option>
+														<option value="Xưởng sản xuất nội thất">Xưởng sản
+															xuất nội thất</option>
+														<option value="Bảo trì nhà xưởng">Bảo trì nhà
+															xưởng</option>
+													</select>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 col-xs-12">
+													<label for="sodienthoai" class="col-sm-12 control-label">Quy
+														mô: <span class="red_require">(*)</span>
+													</label> <input th:field="*{size}" type="text" class="form-control"
+														name="sodienthoai" id="sodienthoai" placeholder=""
+														required="required" />
+												</div>
+												<div class="col-sm-6 col-xs-12">
+													<label for="loaichuyenmuc" class="col-sm-12 control-label">Trạng
+														thái công trình: <span class="red_require">(*)</span>
+													</label> <input th:field="*{status}" type="text"
+														class="form-control" name="sodienthoai" id="sodienthoai"
+														placeholder="" required="required" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6">
+													<label for="giachothue" class="col-sm-12 control-label">Tổng
+														diện tích XD: <span class="red_require">(*)</span>
+													</label> <input th:field="*{scale}" type="number" step="any"
+														min="0" class="form-control" name="giachothue"
+														id="giachothue" placeholder="(Đơn vị m²)"
+														required="required" />
+												</div>
+												<div class="col-sm-6">
+													<label for="dongvigiachothue"
+														class="col-sm-12 control-label">Tổng giá trị XD: <span
+														class="red_require">(*)</span></label> <input th:field="*{money}"
+														type="number" step="any" min="0" class="form-control"
+														name="songuoi" id="songuoi" value=""
+														placeholder="(Tỷ VNĐ)" required="required" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 col-xs-12">
+													<label for="loaichuyenmuc" class="col-sm-12 control-label">Thời
+														gian bắt đầu XD: <span class="red_require">(*)</span>
+													</label> <input th:field="*{createday}" type="text"
+														class="form-control createday" name="sodienthoai"
+														id="createday" placeholder="" required="required" />
+												</div>
+												<div class="col-sm-6 col-xs-12">
+													<label for="sodienthoai" class="col-sm-12 control-label">Thời
+														gian kết thúc: <span class="red_require">(*)</span>
+													</label> <input th:field="*{finishday}" type="text"
+														class="form-control finishday" name="sodienthoai"
+														id="finishday" placeholder="" required="required" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6">
+													<label for="tieude" class="col-sm-12 control-label">Ảnh
+														nền cho sản phẩm: <span class="red_require">(*) </span>
+													</label> <input style="background: #D3D3D3" name="product-img"
+														type="file" class="form-control" required="required" />
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="shadow">
+								<div class="group_fields">
+									<h3 class="form_title"
+										style="background-color: #1931a7; padding: 1%; color: #fff;">Mô
+										tả</h3>
+									<div class="fields">
+										<p class="bg-success">Mô tả thông tin rỏ ràng, đầy đủ.
+											Viết chữ có dấu để dễ khách dễ đọc hơn!</p>
+										<textarea th:field="*{content}" id="decription" cols="80"
+											style="margin-top: 3%;" name="mota" class="form-control"
+											rows="100" placeholder="Mô tả thông tin"></textarea>
+									</div>
+								</div>
+							</div>
+
+							<div class="btn_dangtin">
+								<input type="submit" class="btn_dangtin btn-warning"
+									style="float: right; padding: 0.8% 2% 0.8% 2%;"
+									value="Lưu ngay" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		CKEDITOR.disableAutoInline = true;
+		CKEDITOR.replace( 'decription' );
+	</script>
+	
+	<script>
+		ClassicEditor
+			.create( document.querySelector( '#decription' ), {
+				
+				ckfinder: {
+					// eslint-disable-next-line max-len
+					uploadUrl: 'https://cksource.com/weuy2g4ryt278ywiue/core/connector/php/connector.php?command=QuickUpload&amp;type=Files&amp;responseType=json'
+				}
+			} )
+			.then( editor => {
+				window.editor = editor;
+			} )
+			.catch( err => {
+				console.error( err.stack );
+			} );
+	</script>
+	
+	<script type="text/javascript">
+	$('#finishday').datepicker({
+	    'format': 'yyyy-m-d',
+	    'autoclose': true
+	});
+	$('#createday').datepicker({
+	    'format': 'yyyy-m-d',
+	    'autoclose': true
+	});
+</script>
+
+</body>
+</html>

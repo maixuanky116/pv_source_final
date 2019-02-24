@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+    <title>Phố Việt Company</title>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/toeic.png}"/>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}"/> 
+    
+    <script type="text/javascript" th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    
+    <link rel="stylesheet" th:href="@{/js/dropdown.js}"/>
+    
+    <!-- JS Global Compulsory -->           
+	<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+    
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	
+</head> 
+
+<body>
+   
+<div class="wrapper">
+	<div th:replace="fragments/layout :: header"></div>
+	
+	<!--=== Content ===--> 
+	 <div class="design-page">
+	 	<!-- <div class="design-header-img" style="background: url(../img/anh-nen-4.jpg); height: 400px;"> -->
+	 	<div th:if="${module}=='project-house'">
+		 	<div class="design-header-img col-md-12" style="background: url(../img/nen-3.PNG); height: 400px;">
+		  		<!-- <img width="100%" height="400" alt="" src="/img/anh-nen-4.jpg"/> -->	  		  			  		 			
+			  	<div class="col-md-7">	  
+			  		<p class="title-header">Dự án nhà ở</p>			  							
+				  	<p> Giải pháp sử dụng bê tông trần, gạch nung cho sàn, trần, tường giúp
+				  		tiết kiệm đáng kể chi phí trang trí hoàn thiện. Ngoài ra, gỗ sau khi
+				  		dùng làm cốp pha được tái sử dụng để đóng cửa đi, cửa sổ, bàn ghế…</p>
+				  			
+				  	<p><br/></p>
+				  	<p><br/></p>
+			  	</div> 	  			
+		    </div>
+		    <div class="container clearfix">
+			    <div class="section-title clearfix medium text-left " style="padding: 15px;">
+				    <h3 class="excerpt"> Dự án nhà ở</h3>
+				    <p class="admin-said" style="font: italic 18px/26px Georgia,Serif"> Đừng bỏ qua một cơ hội nào vì khách hàng luôn tin tưởng, 
+					    lựa chọn những doanh nghiệp có sự đầu tư kỹ lưỡng, 
+					    chuyên nghiệp về hình ảnh thương hiệu cũng như có sự quảng bá rộng rãi. 
+					    Ngoài ra, quảng bá trên website chính là sự quảng bá nhanh chóng và mang lại hiệu quả lâu dài.</p>
+				    <p>
+				    </p>
+			    </div>
+		    </div>
+	    </div>
+	    
+	    <div th:if="${module}=='project-office'">
+		 	<div class="design-header-img col-md-12" style="background: url(../img/nen-3.PNG); height: 400px;">
+		  		<!-- <img width="100%" height="400" alt="" src="/img/anh-nen-4.jpg"/> -->	  		  			  		 			
+			  	<div class="col-md-7">	  
+			  		<p class="title-header">Dự án văn phòng</p>			  							
+				  	<p> Giải pháp sử dụng bê tông trần, gạch nung cho sàn, trần, tường giúp
+				  		tiết kiệm đáng kể chi phí trang trí hoàn thiện. Ngoài ra, gỗ sau khi
+				  		dùng làm cốp pha được tái sử dụng để đóng cửa đi, cửa sổ, bàn ghế…</p>
+				  			
+				  	<p><br/></p>
+				  	<p><br/></p>
+			  	</div> 	  			
+		    </div>
+		    <div class="container clearfix">
+			    <div class="section-title clearfix medium text-left " style="padding: 15px;">
+				    <h3 class="excerpt"> Dự án văn phòng</h3>
+				    <p class="admin-said" style="font: italic 18px/26px Georgia,Serif"> Đừng bỏ qua một cơ hội nào vì khách hàng luôn tin tưởng, 
+					    lựa chọn những doanh nghiệp có sự đầu tư kỹ lưỡng, 
+					    chuyên nghiệp về hình ảnh thương hiệu cũng như có sự quảng bá rộng rãi. 
+					    Ngoài ra, quảng bá trên website chính là sự quảng bá nhanh chóng và mang lại hiệu quả lâu dài.</p>
+				    <p>
+				    </p>
+			    </div>
+		    </div>
+	    </div>
+	    
+	    <div th:if="${module}=='project-furniture'">
+		 	<div class="design-header-img col-md-12" style="background: url(../img/nen-3.PNG); height: 400px;">
+		  		<!-- <img width="100%" height="400" alt="" src="/img/anh-nen-4.jpg"/> -->	  		  			  		 			
+			  	<div class="col-md-7">	  
+			  		<p class="title-header">Dự án nhà xưởng</p>			  							
+				  	<p> Giải pháp sử dụng bê tông trần, gạch nung cho sàn, trần, tường giúp
+				  		tiết kiệm đáng kể chi phí trang trí hoàn thiện. Ngoài ra, gỗ sau khi
+				  		dùng làm cốp pha được tái sử dụng để đóng cửa đi, cửa sổ, bàn ghế…</p>
+				  			
+				  	<p><br/></p>
+				  	<p><br/></p>
+			  	</div> 	  			
+		    </div>
+		    <div class="container clearfix">
+			    <div class="section-title clearfix medium text-left " style="padding: 15px;">
+				    <h3 class="excerpt"> Dự án nhà xưởng</h3>
+				    <p class="admin-said" style="font: italic 18px/26px Georgia,Serif"> Đừng bỏ qua một cơ hội nào vì khách hàng luôn tin tưởng, 
+					    lựa chọn những doanh nghiệp có sự đầu tư kỹ lưỡng, 
+					    chuyên nghiệp về hình ảnh thương hiệu cũng như có sự quảng bá rộng rãi. 
+					    Ngoài ra, quảng bá trên website chính là sự quảng bá nhanh chóng và mang lại hiệu quả lâu dài.</p>
+				    <p>
+				    </p>
+			    </div>
+		    </div>
+	    </div>
+	    
+	    <div class="container">
+		 	<div class="design">		 
+		 		<div class="row"> 			 		
+					<div class="col-sm-3 design_img" th:each="p : ${product}">  						
+					    <a class="load" th:href="@{/house-details(id=${p.id})}"><img width="100%" height="350" th:src="${p.image}" th:title="#{logo}" th:alt="#{logo}"/>
+					    	<div class="info-design-house-item">					    					    					    		
+						    	<p th:text="${p.address}">209/72 Tôn Thất Thuyết, F3, Q4</p>
+						    	<p>Quy mô: <strong th:text="${p.size}">1 Trệt + 2 Lầu</strong></p>
+						    	<p>Tổng DTXD: <strong th:text="${p.scale}">390 m2</strong></p>
+					    		<p>Tổng giá trị XD: Phần thô + Hoàn thiện: <strong th:text="${p.money}">2,34 tỷ</strong></p>				    		
+					   		</div>
+					   	</a>
+					</div>	
+				</div>
+				<div class="loadMore">
+				<a  href="#" id="loadMore">Xem thêm</a>	
+				</div>							
+		 	</div>
+		</div>
+	 </div>
+	 <!--=== End Content ===--> 
+		 
+	<div th:replace="fragments/layout :: footer"></div>
+</div>
+
+<div th:replace="fragments/layout :: modal-login"></div>
+
+<script type="text/javascript">
+	$(function () {
+	    $(".load").slice(0, 4).show();
+	    $("#loadMore").on('click', function (e) {
+	        e.preventDefault();
+	        $(".load:hidden").slice(0, 4).slideDown();
+	        if ($(".load:hidden").length == 0) {
+	            $("#load").fadeOut('slow');
+	        }
+	        $('html,body').animate({
+	            scrollTop: $(this).offset().top
+	        }, 1500);
+	    });
+	});
+</script>
+
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+
+</body>
+</html> 

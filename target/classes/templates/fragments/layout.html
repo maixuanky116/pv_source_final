@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+    <title>Phố Việt Company</title>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/toeic.png}"/>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}"/> 
+    
+    <script type="text/javascript" th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    
+    <link rel="stylesheet" th:href="@{/js/dropdown.js}"/>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	
+
+
+</head> 
+
+<body>
+<div class="header" th:fragment="header">
+	<!--=== Contact ===--> 
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				 <div class="contact-info">
+				 	<ul class="info">
+			   			<li class="col-md-4">
+			   				<a href="#"><span style="color: black;"><i class="fa fa-location-arrow"></i> Add:</span> Số 41 đường 43, phường Tân Phong, Q7, HCM</a>
+			   			</li>
+			   			<li class="col-md-4">
+			   				<a href="#"><span style="color: black;"><i class="fa fa-envelope"></i> E-mail:</span> pvcons@gmail.com</a>
+			   			</li>
+			   			<li class="col-md-4">
+			   				<a href="#"><span style="color: black;"><i class="fa fa-phone"></i> Hotline:</span> (028) 8888 8888 - 0909 166 345 (Mr. Lợi)</a>
+			   			</li>
+		   			</ul>
+		   		</div>
+		   </div>
+		</div>
+	</div> <!--=== End Contact ===--> 
+	
+	<!--=== Navbar ===--> 
+	<div class="menu-nav">
+		<div class="container">	
+			<nav class="navbar navbar-expand-md navbar-dark menu-bar">
+			  <a th:href="@{/}"><img width="100px" height="60px" alt="" src="/logo-pv1.jpg"/></a>
+			  <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse menu" id="collapsibleNavbar">
+			    <ul class="navbar-nav ml-auto menu-ul">
+			      <li class="dropdown">
+			        <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown">THIẾT KẾ</a>
+			        <div class="dropdown-menu" style="margin-top: -1px">
+			          <a class="dropdown-item" th:href="@{/thiet-ke-nha-o}">Thiết kế nhà ở</a>
+			          <a class="dropdown-item" th:href="@{/thiet-ke-van-phong}">Thiết kế văn phòng</a>
+			          <a class="dropdown-item" th:href="@{/thiet-ke-noi-that}">Thiết kế nội thất</a>
+			        </div>
+			      </li> 
+			      <li class="dropdown">
+			        <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown">DỰ ÁN THỰC HIỆN</a>
+			        <div class="dropdown-menu" style="margin-top: -1px">
+			          <a class="dropdown-item" th:href="@{/du-an-nha-o}">Dự án nhà ở</a>
+			          <a class="dropdown-item" th:href="@{/du-an-van-phong}">Dự án văn phòng</a>
+			          <a class="dropdown-item" th:href="@{/du-an-nha-xuong}">Dự án nhà xưởng</a>
+			        </div>
+			      </li> 
+			      <li class="dropdown">
+			        <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown">TRANG TRÍ NỘI THẤT</a>
+			        <div class="dropdown-menu" style="margin-top: -1px">
+			          <a class="dropdown-item" th:href="@{/trang-tri-noi-that-van-phong}">Nội thất văn phòng</a>
+			          <a class="dropdown-item" th:href="@{/trang-tri-noi-that-nha-o}">Nội thất nhà ở</a>
+			          <a class="dropdown-item" th:href="@{/trang-tri-noi-that-xuong}">Nội thất xưởng</a>
+			          <div class="dropdown-divider"></div>
+			          <a class="dropdown-item" th:href="@{/xuong-san-xuat-noi-that}" style="color: yellow;">Xưởng sản xuất nội thất</a>
+			        </div>
+			      </li>
+			      <li><a href="#">BẢO TRÌ NHÀ XƯỞNG</a></li>
+			    </ul>
+			  </div>  
+			</nav>
+		</div> 
+	</div>
+	<!--=== End Navbar ===--> 
+</div>
+	
+	
+	<!-- right side panel fragment -->
+	<div class="panel panel-dark-blue" th:fragment="panel-right">	
+		<div class="panel-body-danhmuc">
+			<ul style="list-style-type: none;">
+				<h5>DANH MỤC</h5>
+				
+				<li class="" >
+					<a style="color: #0000CD;"  href="#">Thiết kế nhà ở</a>
+				</li>
+				<li  class="">
+					<a  href="#">Thiết kế văn phòng</a>
+				</li>	
+				<li  class="">
+					<a  href="#">Thiết kế nội thất</a>
+				</li>							
+			</ul>
+		</div>
+		<div class="panel-body-tin" style="margin-top: 20px;">
+			<ul style="list-style-type: none;">
+				<h5> TIN NỔI BẬT</h5>
+				<li class=""><a href="#">Những góc vườn xanh trong căn hộ</a></li>
+				<li class=""><a href="#">Nhà biệt thự với thiết kế sân vườn lạ mắt</a></li>
+				<li class=""><a href="#">Những mẫu bếp nối liền phòng khách đẹp nhất</a></li>
+				<li class=""><a href="#">Không gian kiến trúc - vẻ đẹp về đêm</a></li>
+				
+			</ul>
+
+		</div>
+
+	</div>
+	<!--  end panel -->
+	
+	
+	 <div class="copyright footer" th:fragment="footer">
+		 <footer class="construct">
+			<div class="container">
+				<div class="row">						
+					<div id="text-2" class="col-lg-4 col-md-4 col-sm-7 col-xs-7 widget footer-widget widget_text ">
+						<h3>Cty TNHH TK XD TTNT Phố Việt</h3>			
+						<div class="textwidget">
+							<ul>
+								<li><span><i class="fa fa-location-arrow"></i> Địa chỉ:</span> Số 41 đường 43, phường Tân Phong, Q7, HCM</li>	
+								<li><span><i class="fa fa-phone"></i> Tel:</span> (028) 8888 8888 - 0909 166 345</li>
+								<li><span><i class="fa fa-envelope"></i> Email:</span> <a title="Gởi email cho chúng tôi" href="mailto:pvcons@gmail.com">pvcons@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="text-3" class="col-lg-4 col-md-4 col-sm-7 col-xs-7 widget footer-widget widget_text ">
+						<h3>Xưởng sản xuất nội thất</h3>			
+						<div class="textwidget">
+							<ul>
+								<li><span><i class="fa fa-location-arrow"></i> Địa chỉ:</span> Số 41 đường 43, phường Tân Phong, Q7, HCM.</li>
+								<li><span><i class="fa fa-phone"></i> Tel:</span> 0987.793.339 - 0979.276.777</li>
+							</ul>
+						</div>
+					</div>
+					<div id="text-4" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget footer-widget widget_text ">
+						<h3 class="imp-f headline_footer">Liên hệ với chúng tôi</h3>			
+						<div class="textwidget">               
+							<div class="connect">								
+								<a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fa fa-facebook-official" style="font-size: 24px; margin: 2px;"></i></a>
+								<a href="#" target="_blank" class="social-icon"><i class="fa fa-google-plus" style="font-size:24px; margin: 2px;"></i></a>
+								<a href="#" target="_blank" class="social-icon"><i class="fa fa-youtube-square" style="font-size:24px; margin: 2px;"></i></a>
+							</div>						
+						</div>
+						
+						<h4 class="imp-f headline_footer"></h4>			
+						<div class="textwidget">               
+							<div class="connect">
+								<a th:unless="${session.user == null}" class="footerlink"
+									th:href="@{/user-info}" style="margin-left: 40px;">Trang cá
+									nhân </a>
+								<a th:unless="${session.user == null}" class="footerlink"
+									th:href="@{/logout}" style="margin-left: 40px;">Đăng xuất </a>
+								<!-- else not-->									
+								<button th:if="${session.user == null}" type="button" class="btn btn-info btn-sm" onclick="document.getElementById('id01').style.display='block'">Đăng nhập</button>						
+							</div>						
+						</div>
+					</div>		
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+<!-- right side modal fragment -->
+	<div th:fragment="modal-login">	
+		<div id="id01" class="modal">
+  <form class="modal-content animate" th:action="@{/login}" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/img/anh-nen-1.jpg" alt="Avatar" class="avatar"/>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required="required"/>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required="required"/>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"/> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+	</div>
+	<!--  end modal -->
+
+
+
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script> 
+
+</body>
+
+</html> 

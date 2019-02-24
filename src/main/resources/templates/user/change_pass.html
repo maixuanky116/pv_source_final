@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Phố Việt Company</title>
+<!-- Meta -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Favicon -->
+<link rel="shortcut icon" th:href="@{/toeic.png}" />
+
+<!-- Bootstrap CSS-->
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/font-awesome/css/font-awesome.min.css}" />
+
+<script type="text/javascript"
+	th:src="@{/bootstrap/jquery-3.2.1.min.js}"></script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<link rel="stylesheet" th:href="@{/js/dropdown.js}" />
+
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div class="container">
+		<div class="admin-content">
+			<div class="row">
+				<div class="col-md-3">
+					<div th:replace="fragments/user_sidebar :: user-sidebar"></div>
+				</div>
+				<div class="col-md-9">
+					<div class="profile-content"
+						style="margin-left: auto; margin-right: auto;">
+						<h3
+							style="text-align: center; color: red; text-transform: uppercase">Đổi
+							mật khẩu</h3>
+
+						<form style="padding: 0px 20px 0px 20px" th:object="${user}"
+							th:action="@{/save-pass}" method="post">
+							<div class="form-group">
+								<label class="small" for="fullname">Mật khẩu củ:</label> 
+								<input required="required" name="old-psw" type="text"
+									class="form-control" id="fullname" />
+							</div>
+							<div class="form-group">
+								<label class="small" for="fullname">Mật khẩu mới:</label> 
+								<input required="required" name="new-psw" type="text"
+									class="form-control" id="fullname" />
+							</div>
+							<div class="form-group">
+								<label class="small" for="fullname">Nhập lại mật khẩu mới:</label> 
+								<input required="required" name="re-new-psw" type="text"
+									class="form-control" id="fullname" />
+							</div>
+							<div class="form-group">
+								<div class="col-md-6"
+									style="margin-left: auto; margin-right: auto;">
+									<button type="submit" class="btn btn-success form-control">Cập nhật</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		var info = /*[[${info}]]*/'default';
+		console.log(same);
+		if (info == 1) {
+			alert("Mật khẩu không đúng!");
+		} else if (same == 2) {
+			alert("Mật khẩu không khớp!");
+		} 
+		
+		/*]]>*/
+	</script>
+
+</body>
+</html>
